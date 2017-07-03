@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/styles.css') }}">
+{% endblock %}
+{% block body %}
+    <div class ="username">
+        <h3> Your username is: <i>{{ username }}</i></h3>
+    </div>
+    <div class="usermenu">
+        <a href="{{ path('list') }}">Show Table</a>
+        <a href="{{ path('cud') }}">Add, Modify or Delete table records</a>
+    </div>
+{% endblock%}
