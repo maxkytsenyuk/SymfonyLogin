@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/gridstyles.css') }}">
+{% endblock %}
+{% block body %}
+    {{ grid(grid, 'APYDataGridBundle::blocks_js.jquery.html.twig') }}
+{% endblock%}
+
+

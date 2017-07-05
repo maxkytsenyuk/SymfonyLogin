@@ -4,8 +4,73 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef4d923260ed2bd5773a17370a2eb4af",
+    "content-hash": "af35b0c7fb011fe94645127ae6fb7cb9",
     "packages": [
+        {
+            "name": "apy/datagrid-bundle",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/APY/APYDataGridBundle.git",
+                "reference": "d2c4f76b74913d9f80782146f070d2c244838cc9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/APY/APYDataGridBundle/zipball/d2c4f76b74913d9f80782146f070d2c244838cc9",
+                "reference": "d2c4f76b74913d9f80782146f070d2c244838cc9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6",
+                "symfony/symfony": "~2.8|~3.0",
+                "twig/twig": ">=1.5.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "1.11.*",
+                "phpunit/phpunit": "~4.1.1"
+            },
+            "suggest": {
+                "PHPExcel": "Export the grid (Excel, HTML or PDF)",
+                "ext-intl": "Translate the grid",
+                "ext-mbstring": "Convert your data with the right charset"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "APY\\DataGridBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stanislav Turza",
+                    "email": "stanislav.turza@gmail.com"
+                },
+                {
+                    "name": "Evan Owens",
+                    "email": "eaowens@gmail.com"
+                },
+                {
+                    "name": "Yoann Petit",
+                    "email": "abhoryo@free.fr"
+                }
+            ],
+            "description": "Symfony Datagrid Bundle",
+            "homepage": "https://github.com/apy/APYDataGridBundle",
+            "keywords": [
+                "datagrid",
+                "symfony"
+            ],
+            "time": "2017-05-17T11:40:10+00:00"
+        },
         {
             "name": "composer/ca-bundle",
             "version": "1.0.7",

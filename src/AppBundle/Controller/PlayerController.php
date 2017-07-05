@@ -9,12 +9,14 @@
 namespace AppBundle\Controller;
 
 
+use AppBundle\AppBundle;
 use AppBundle\Entity\Player;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use APY\DataGridBundle\Grid\Source\Entity;
 
 class PlayerController extends Controller
 {
@@ -112,5 +114,21 @@ public function showAction(){
 
         return $this->redirectToRoute('list');
 
+    }
+    /**
+     * @Route("/grid")
+     */
+    public function myGridAction()
+    {
+
+        $source = new Entity('AppBundle:Player');
+
+        $grid = $this->get('grid');
+
+        $grid->setSource($source);
+
+        $grid->setLimits(25);
+
+        return $grid->getGridResponse('player/myGrid.html.twig');
     }
 }

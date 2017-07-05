@@ -9,10 +9,12 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use APY\DataGridBundle\Grid\Mapping as GRID;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="player")
+ * @GRID\Source(columns="id, surname, name, team, age")
  */
 class Player
 {
