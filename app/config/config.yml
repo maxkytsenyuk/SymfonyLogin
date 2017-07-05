@@ -75,3 +75,9 @@ fos_user:
     from_email:
         address: "ololo@ololo.com"
         sender_name: "max"
+
+doctrine_migrations:
+    dir_name: "%kernel.root_dir%/DoctrineMigrations"
+    namespace: Application\Migrations
+    table_name: migration_versions
+    name: Application Migrations
