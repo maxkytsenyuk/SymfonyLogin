@@ -17,6 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use APY\DataGridBundle\Grid\Source\Entity;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class PlayerController extends Controller
 {
@@ -37,6 +38,7 @@ public function showAction(){
     public function listAction(){
 
     $players= $this->getDoctrine()->getRepository('AppBundle:Player')->FindAll();
+
 
     return $this ->render('player/list.html.twig',[
         'players' => $players
@@ -131,4 +133,36 @@ public function showAction(){
 
         return $grid->getGridResponse('player/myGrid.html.twig');
     }
+    /**
+     * @Route("/newgrid")
+     */
+    public function newGridAction(){
+
+        return $this->render('player/newgrid.html.twig');
+
+    }
+
+    /**
+     * @Route("/jsongrid")
+     */
+    public function jsonGridAction(Request $request){
+
+        $em = $this->getDoctrine()->getManager();
+        $repo= $this->getDoctrine()->getRepository('AppBundle:Player');
+        /*$draw=$request->get('draw');*/
+        $players = $repo->createQueryBuilder('q')
+            ->getQuery()
+            ->getArrayResult();
+        $count = count($players);
+        $draw=$request->query->get('draw');
+        return new JsonResponse( [
+            "draw" =>  $draw,
+            "recordsTotal"=> $count,
+            "recordsFiltered"=> $count,
+            'data' => $players
+
+        ]);
+
+    }
+
 }
